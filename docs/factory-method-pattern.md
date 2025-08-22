@@ -40,10 +40,6 @@ const s = SquareFactory.create();
 s.draw(); // Drawing a Square
 ```
 
-```javascript
-
-```
-
 ```java
 // Product interface
 interface Shape {
