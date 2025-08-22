@@ -9,6 +9,8 @@ Proxy giúp:
 
 👉 Nói đơn giản: Proxy là "người trung gian".
 
+Mức độ khó (★★★☆☆) | Mức độ phổ biến (★★★★☆)
+
 ```javascript
 // Proxy cơ bản (ES6 Proxy)
 
