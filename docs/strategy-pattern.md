@@ -1,6 +1,7 @@
 # Strategy Pattern
 
 Là mẫu thiết kế hành vi (behavioral design pattern)
+
 Ý tưởng:
 - Định nghĩa nhiều thuật toán/chiến lược khác nhau cho một tác vụ.
 - Cho phép hoán đổi (switch) chiến lược đó lúc runtime, mà không cần thay đổi code của client.

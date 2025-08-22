@@ -1,10 +1,14 @@
 # Facade Pattern
 
 Mẫu thiết kế cấu trúc (structural design pattern) để ẩn đi sự phức tạp của nhiều module/hệ thống con, và cung cấp một interface đơn giản, thống nhất cho bên ngoài.
+
 Ý tưởng chính:
-👉 Ẩn đi sự phức tạp của nhiều hệ thống con (subsystems)
-👉 Cung cấp một interface đơn giản, thống nhất cho client (người dùng code).
+- 👉 Ẩn đi sự phức tạp của nhiều hệ thống con (subsystems)
+- 👉 Cung cấp một interface đơn giản, thống nhất cho client (người dùng code).
+
 Giúp component gọn gàng hơn, chỉ làm việc với 1 "cửa" duy nhất thay vì chạm vào nhiều module con.
+
+Mức độ khó (★☆☆☆☆) | Mức độ phổ biến (★★★★★)
 
 Ví dụ: Hook trong React:
 
