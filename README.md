@@ -10,7 +10,7 @@ GoF Design Patterns (23)
     *   [Singleton](./docs/singleton-pattern.md)
 *   **Structural Patterns (7) – Nhóm cấu trúc**
     *   [Adapter](docs/adapter-pattern.md)
-    *   Bridge
+    *   [Bridge](./docs/bridge-pattern.md)
     *   Composite
     *   Decorator
     *   [Facade](docs/facade-pattern.md)

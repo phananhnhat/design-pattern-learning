@@ -4,8 +4,6 @@ Là một creational pattern (mẫu tạo).
 
 Ý tưởng chính của mẫu này là tạo ra các đối tượng mới bằng cách sao chép (cloning) một đối tượng đã tồn tại, được gọi là "prototype". Thay vì tạo một đối tượng từ đầu (tốn kém chi phí khởi tạo), bạn chỉ cần nhân bản một đối tượng mẫu.
 
-👉 **Tóm lại**: Clone đối tượng đã có để tạo đối tượng mới.
-
 Mức độ khó (★★☆☆☆) | Mức độ phổ biến (★★★☆☆)
 
 ### Khi nào dùng?
