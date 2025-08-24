@@ -7,7 +7,7 @@ Là một creational pattern (mẫu tạo).
 - Người dùng không cần biết chi tiết object được tạo ra như thế nào, chỉ cần gọi builder để ghép từng phần.
 - Dùng một đối tượng Builder để từng bước xây dựng một object phức tạp.
 - 
-👉 **Tóm lại**: Xây dựng một đối tượng phức tạp từng bước một (step-by-step).
+👉 Xây dựng một đối tượng phức tạp từng bước một (step-by-step).
 
 Mức độ khó (★★★☆☆) | Mức độ phổ biến (★★★★☆)
 

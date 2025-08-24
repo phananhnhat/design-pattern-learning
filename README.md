@@ -24,7 +24,7 @@ GoF Design Patterns (23)
     *   Mediator
     *   Memento
     *   [Observer](./docs/observer-pattern.md)
-    *   State
+    *   [State](./docs/state-pattern.md)
     *   [Strategy](./docs/strategy-pattern.md)
     *   Template Method
     *   Visitor

@@ -6,7 +6,7 @@ Là một structural pattern (mẫu cấu trúc).
 - Tách abstraction (trừu tượng) ra khỏi implementation (hiện thực) để hai phần có thể phát triển độc lập.
 - Tránh việc “class explosion”(quá nhiều class) khi có nhiều biến thể (ví dụ: nhiều hình dạng × nhiều cách vẽ).
 
-👉 **Tóm lại**: "Cầu nối" giữa giao diện (cách dùng) và phần thực thi (cách làm). Thay vì kế thừa, ta dùng composition (kết hợp đối tượng).
+👉 "Cầu nối" giữa giao diện (cách dùng) và phần thực thi (cách làm). Thay vì kế thừa, ta dùng composition (kết hợp đối tượng).
 
 Mức độ khó (★★★☆☆) | Mức độ phổ biến (★★★☆☆)
 
