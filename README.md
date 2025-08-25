@@ -26,5 +26,5 @@ GoF Design Patterns (23)
     * [Observer](./docs/observer-pattern.md)
     * [State](./docs/state-pattern.md)
     * [Strategy](./docs/strategy-pattern.md)
-    * Template Method
+    * [Template Method](./docs/template-method-pattern.md)
     * Visitor
