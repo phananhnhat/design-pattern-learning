@@ -21,8 +21,8 @@ GoF Design Patterns (23)
     * Command
     * [Interpreter](docs/interpreter-pattern.md)
     * [Iterator](docs/iterator-pattern.md)
-    * Mediator
-    * Memento
+    * [Mediator](docs/mediator-pattern.md)
+    * [Memento](docs/memento-pattern.md)
     * [Observer](./docs/observer-pattern.md)
     * [State](./docs/state-pattern.md)
     * [Strategy](./docs/strategy-pattern.md)
