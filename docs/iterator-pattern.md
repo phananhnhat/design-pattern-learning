@@ -7,9 +7,9 @@ Cung cấp một cách duyệt tuần tự qua các phần tử trong một coll
 - Collection chỉ cần cung cấp Iterator.
 - Iterator sẽ có các phương thức như: hasNext() – còn phần tử không? next() – lấy phần tử tiếp theo.
 
-Mức độ khó (★★☆☆☆) | Mức độ phổ biến (★★★★★)
-
 👉 Hình dung: Giống như bạn đọc sách bằng bookmark: bạn không cần biết sách đóng gáy thế nào, chỉ cần biết lật sang trang kế tiếp.
+
+Mức độ khó (★★☆☆☆) | Mức độ phổ biến (★★★★★)
 
 ```javascript
 // Tạo iterator cho 1 mảng

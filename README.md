@@ -2,7 +2,7 @@
 
 GoF Design Patterns (23)
 
-*   =**Creational Patterns (5) – Nhóm khởi tạo**
+*   **Creational Patterns (5) – Nhóm khởi tạo**
     *   [Factory Method](./docs/factory-method-pattern.md)
     *   Abstract Factory
     *   [Builder](./docs/builder-pattern.md)
@@ -14,7 +14,7 @@ GoF Design Patterns (23)
     *   [Composite](./docs/composite-pattern.md)
     *   [Decorator](./docs/decorator-pattern.md)
     *   [Facade](docs/facade-pattern.md)
-    *   Flyweight
+    *   [Flyweight](docs/flyweight-pattern.md)
     *   [Proxy](./docs/proxy-pattern.md)
 *   **Behavioral Patterns (11) – Nhóm hành vi**
     *   Chain of Responsibility
