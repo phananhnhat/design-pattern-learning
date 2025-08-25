@@ -19,7 +19,7 @@ GoF Design Patterns (23)
 *   **Behavioral Patterns (11) – Nhóm hành vi**
     *   Chain of Responsibility
     *   Command
-    *   Interpreter
+    *   [Interpreter](docs/interpreter-pattern.md)
     *   [Iterator](docs/iterator-pattern.md)
     *   Mediator
     *   Memento
