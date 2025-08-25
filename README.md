@@ -18,7 +18,7 @@ GoF Design Patterns (23)
     * [Proxy](./docs/proxy-pattern.md)
 * **Behavioral Patterns (11) – Nhóm hành vi**
     * Chain of Responsibility
-    * Command
+    * [Command](docs/command-pattern.md)
     * [Interpreter](docs/interpreter-pattern.md)
     * [Iterator](docs/iterator-pattern.md)
     * [Mediator](docs/mediator-pattern.md)

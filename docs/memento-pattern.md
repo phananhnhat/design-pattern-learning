@@ -1,4 +1,4 @@
-# Mediator Pattern
+# Memento Pattern
 
 Là mẫu thiết kế hành vi (behavioral design pattern).
 Để lưu trữ và khôi phục trạng thái của một object mà không để lộ chi tiết nội tại của nó
@@ -26,7 +26,6 @@ function createEditor() {
     };
 }
 
-// --- Demo ---
 const editor = createEditor();
 const history = [];
 
