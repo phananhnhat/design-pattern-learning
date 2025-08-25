@@ -20,7 +20,7 @@ GoF Design Patterns (23)
     *   Chain of Responsibility
     *   Command
     *   Interpreter
-    *   Iterator
+    *   [Iterator](docs/iterator-pattern.md)
     *   Mediator
     *   Memento
     *   [Observer](./docs/observer-pattern.md)
