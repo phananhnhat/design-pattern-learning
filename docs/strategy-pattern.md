@@ -8,8 +8,6 @@ Là mẫu thiết kế hành vi (behavioral design pattern)
 
 👉 Nói dễ hiểu: thay vì viết nhiều if/else để chọn cách làm, bạn bọc mỗi cách làm thành một strategy riêng, rồi inject vào lúc cần.
 
-Ví dụ: Hook trong React:
-
 ```javascript
 const shippingStrategies = {
     standard: (order) => order.weight * 1000,

@@ -10,7 +10,7 @@ Giúp component gọn gàng hơn, chỉ làm việc với 1 "cửa" duy nhất t
 
 Mức độ khó (★☆☆☆☆) | Mức độ phổ biến (★★★★★)
 
-Ví dụ: Hook trong React:
+Ví dụ: Custom hook trong React
 
 ```javascript
 // hooks/useDashboardFacade.ts

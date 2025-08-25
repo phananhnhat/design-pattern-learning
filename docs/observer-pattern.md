@@ -13,7 +13,6 @@ Khi Subject thay đổi, nó sẽ thông báo (notify) tất cả Observer → c
 👉 Dễ hình dung:
 
 Facebook: bạn follow một page → khi page post bài mới, bạn (Observer) sẽ nhận thông báo từ page (Subject).
-Ví dụ: Hook trong React:
 
 ```javascript
 // Subject (Event emitter dạng đơn giản)
