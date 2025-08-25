@@ -7,7 +7,6 @@ Khác với Simple Factory (một hàm duy nhất tạo ra mọi thứ), Factory
 Ý tưởng:
 - Có một interface/abstract để định nghĩa method createObject(), còn mỗi subclass sẽ triển khai chi tiết tạo ra sản phẩm cụ thể.
 
-
 Mức độ khó (★★☆☆☆) | Mức độ phổ biến (★★★★★)
 
 ```javascript
@@ -87,8 +86,7 @@ public class Main {
     }
 }
 ```
-👉 Ở đây ShapeFactory là factory method: mỗi subclass của nó (
-CircleFactory, SquareFactory) quyết định sản xuất ra loại Shape nào.
+👉 Ở đây ShapeFactory là factory method: mỗi subclass của nó (CircleFactory, SquareFactory) quyết định sản xuất ra loại Shape nào.
 
 🔑 Khác biệt chính so với Simple Factory
 
