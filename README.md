@@ -12,7 +12,7 @@ GoF Design Patterns (23)
     *   [Adapter](docs/adapter-pattern.md)
     *   [Bridge](./docs/bridge-pattern.md)
     *   [Composite](./docs/composite-pattern.md)
-    *   Decorator
+    *   [Decorator](./docs/decorator-pattern.md)
     *   [Facade](docs/facade-pattern.md)
     *   Flyweight
     *   [Proxy](./docs/proxy-pattern.md)
