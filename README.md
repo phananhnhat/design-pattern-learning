@@ -11,7 +11,7 @@ GoF Design Patterns (23)
 *   **Structural Patterns (7) – Nhóm cấu trúc**
     *   [Adapter](docs/adapter-pattern.md)
     *   [Bridge](./docs/bridge-pattern.md)
-    *   Composite
+    *   [Composite](./docs/composite-pattern.md)
     *   Decorator
     *   [Facade](docs/facade-pattern.md)
     *   Flyweight
