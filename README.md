@@ -17,7 +17,7 @@ GoF Design Patterns (23)
     * [Flyweight](docs/flyweight-pattern.md)
     * [Proxy](./docs/proxy-pattern.md)
 * **Behavioral Patterns (11) – Nhóm hành vi**
-    * Chain of Responsibility
+    * [Chain of Responsibility](./docs/chain-of-responsibility.md)
     * [Command](docs/command-pattern.md)
     * [Interpreter](docs/interpreter-pattern.md)
     * [Iterator](docs/iterator-pattern.md)
