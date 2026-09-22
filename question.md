@@ -31,6 +31,9 @@ Nếu đc hãy thêm các case khác nữa trong 4 câu hỏi
 - Application chỉ cần `INSERT` thẳng, nếu DB trả lỗi *duplicate key / unique violation* thì catch lại và trả message "email đã tồn tại" cho user.
 - Có thể thêm lớp chặn sớm ở tầng cache/application (ví dụ Redis `SETNX email_lock` hoặc distributed lock theo email) để giảm số request phải chạm DB, tăng tốc phản hồi — nhưng đây chỉ là **optimization**, không được thay thế cho unique constraint.
 
+Mô tả flow lớp chặn sớm ở tầng cache/application (ví dụ Redis `SETNX email_lock` hoặc distributed lock theo email) ?Redis `SETNX email_lock` hoạt động như nào
+
+
 ### 2. Tồn kho sản phẩm không được xuống dưới 0
 
 **Kỹ thuật cốt lõi: Atomic update kèm điều kiện ngay trong câu UPDATE**, để DB tự lo việc kiểm tra + trừ trong 1 bước duy nhất, không tách ra "đọc số lượng → so sánh ở code → update":
