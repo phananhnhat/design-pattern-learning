@@ -1,1 +1,0 @@
-2. Job, worker, cron job và thread trong java và nodejs
