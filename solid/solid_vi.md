@@ -585,15 +585,18 @@ Bạn đã bao giờ làm điều này chưa? Xin hãy thay đổi code của ch
 
 ### L - Nguyên Tắc Thay Thế Liskov (Liskov Substitution Principle - LSP)
 
-Tôi nghĩ chúng ta có thời gian cho một nguyên tắc nữa. Nguyên tắc này được gọi là **Nguyên tắc Thay thế Liskov** (Liskov Substitution Principle). Nó được phát minh bởi Barbara Liskov vào năm 1988. 1988 là một năm tốt cho các nguyên tắc.
+Tôi nghĩ chúng ta có thời gian cho một nguyên tắc nữa. Nguyên tắc này được gọi là **Nguyên tắc Thay thế Liskov** (Liskov Substitution Principle).
+Nó được phát minh bởi Barbara Liskov vào năm 1988. 1988 là một năm tốt cho các nguyên tắc.
 
 Barbara Liskov đã nói điều này—ồ, thực ra, đây là một diễn giải vì những gì bà viết là một công thức toán học, nhưng những gì tôi sẽ làm là diễn giải công thức đó: **các lớp kế thừa phải có thể sử dụng được thông qua interface lớp cơ sở mà không cần người dùng phải biết sự khác biệt**.
 
-Điều đó có ý nghĩa hoàn hảo, phải không? Tôi có một user nào đó, và user sử dụng một lớp cơ sở. Nhưng tôi có một lớp kế thừa. Tôi nên có khả năng thay thế lớp kế thừa đó vào, và client không nên biết gì về nó. Đa hình đơn giản, phải không?
+Điều đó có ý nghĩa hoàn hảo, phải không? Tôi có một user nào đó, và user sử dụng một lớp cơ sở.
+Nhưng tôi có một lớp kế thừa. Tôi nên có khả năng thay thế lớp kế thừa đó vào, và client không nên biết gì về nó. Đa hình đơn giản, phải không?
 
 #### Vấn Đề Kinh Khủng Rectangle-Square
 
-Tôi có một `Rectangle`. Trong lớp này mà chúng ta đã viết từ lâu, nó có một field tên là `height` và một field tên là `width`. Cả hai đều là số thực. Có một hàm `setHeight` và một hàm `setWidth`.
+Tôi có một `Rectangle`. Trong lớp này mà chúng ta đã viết từ lâu, nó có một field tên là `height` và một field tên là `width`.
+Cả hai đều là số thực. Có một hàm `setHeight` và một hàm `setWidth`.
 
 ```java
 class Rectangle {
@@ -612,7 +615,8 @@ class Rectangle {
 
 Một yêu cầu mới xuất hiện. Yêu cầu mới đó là cho một `Square`. Bây giờ, rõ ràng, một hình vuông là một hình chữ nhật, vì vậy `Square` kế thừa từ `Rectangle`. Hoàn toàn có lý.
 
-Khoan đã. `Rectangle` có bao nhiêu field? Hai: `height` và `width`. `Square` cần bao nhiêu field? Một. Nó sẽ kế thừa bao nhiêu? Có điều gì đó sai. `Square` không thể kế thừa từ `Rectangle` và chỉ có một field.
+Khoan đã. `Rectangle` có bao nhiêu field? Hai: `height` và `width`. `Square` cần bao nhiêu field? Một. Nó sẽ kế thừa bao nhiêu?
+Có điều gì đó sai. `Square` không thể kế thừa từ `Rectangle` và chỉ có một field.
 
 Bây giờ, điều đó có nghĩa là chúng ta sẽ lãng phí bộ nhớ. Bộ nhớ rẻ. Hãy chỉ lãng phí bộ nhớ và làm điều này. Hãy ghi đè `setWidth` trong `Square` để nó đặt cả height và width. Chúng ta sẽ ghi đè `setHeight` để nó đặt cả height và width. Điều đó giải quyết vấn đề.
 
@@ -634,43 +638,62 @@ class Square extends Rectangle {
 
 Hãy tưởng tượng một số user của `Rectangle`. User đó gọi `setHeight`. User gọi `setHeight` trên `Rectangle` có quyền mong đợi rằng width sẽ không thay đổi không? Có.
 
-Nhưng nếu tôi truyền cho anh ta một `Square`, anh ta sẽ gọi `setHeight`, và width sẽ thay đổi. Điều đó sẽ làm hỏng máy trạng thái hữu hạn nội bộ của anh ta, và sau đó anh ta sẽ làm hỏng heap. Anh ta sẽ phát hiện ra điều này một tỷ lệnh sau khi bạn nhận được một `NullPointerException`.
+Nhưng nếu tôi truyền cho anh ta một `Square`, anh ta sẽ gọi `setHeight`, và width sẽ thay đổi.
+Điều đó sẽ làm hỏng máy trạng thái hữu hạn nội bộ của anh ta, và sau đó anh ta sẽ làm hỏng heap.
+Anh ta sẽ phát hiện ra điều này một tỷ lệnh sau khi bạn nhận được một `NullPointerException`.
 
-Chuyện gì đã xảy ra? Ồ, nhân tiện, bạn là người đang viết code vừa bị nổ. Bạn là người đang viết code đang gọi `setWidth` trên `Rectangle`. Bạn lấy logic analyzer của bạn ra, và bạn đi qua back trace qua một tỷ lệnh. Bạn phát hiện ra, sau nhiều tuần phân tích, rằng lý do bạn bị nổ là vì ai đó đã truyền cho bạn một `Square`.
+Chuyện gì đã xảy ra? Ồ, nhân tiện, bạn là người đang viết code vừa bị nổ. Bạn là người đang viết code đang gọi `setWidth` trên `Rectangle`.
+Bạn lấy logic analyzer của bạn ra, và bạn đi qua back trace qua một tỷ lệnh. Bạn phát hiện ra, sau nhiều tuần phân tích, rằng lý do bạn bị nổ là vì ai đó đã truyền cho bạn một `Square`.
 
 Vì vậy, bạn sẽ viết code gì trong module của bạn để bảo vệ bạn khỏi khả năng rằng `Rectangle` mà bạn đang giữ thực sự có thể là một `Square`? `if (rectangle instanceof Square)...`
 
-Bằng cách làm như vậy, bạn sẽ treo một phụ thuộc vào `Square`, một thứ mà bạn không bao giờ muốn biết về. Nhưng module của bạn, vốn được cho là biết về rectangle, sẽ đột nhiên có một phụ thuộc vào `Square`, vi phạm Nguyên tắc Mở/Đóng và làm cho bạn cứng nhắc và làm cho bạn dễ vỡ.
+Bằng cách làm như vậy, bạn sẽ treo một phụ thuộc vào `Square`, một thứ mà bạn không bao giờ muốn biết về.
+Nhưng module của bạn, vốn được cho là biết về rectangle, sẽ đột nhiên có một phụ thuộc vào `Square`, vi phạm Nguyên tắc Mở/Đóng và làm cho bạn cứng nhắc và làm cho bạn dễ vỡ.
 
-Có ai có code như thế trong hệ thống của họ nơi bạn hỏi một đối tượng là kiểu gì không? Chúng ta sử dụng gì trong Java? Chúng ta sử dụng `instanceof`. Trong .NET, chúng ta sử dụng `is` hoặc `as`. Có một loạt các cách khác nhau để làm điều đó.
+Có ai có code như thế trong hệ thống của họ nơi bạn hỏi một đối tượng là kiểu gì không? Chúng ta sử dụng gì trong Java? Chúng ta sử dụng `instanceof`.
+Trong .NET, chúng ta sử dụng `is` hoặc `as`. Có một loạt các cách khác nhau để làm điều đó.
 
-Không đúng là mỗi lần bạn làm điều đó thì đó là một vấn đề, nhưng hầu hết thời gian khi bạn làm điều đó, đó là một vấn đề. Hầu hết thời gian. Mối quan hệ thú vị cụ thể này gây ra điều đó xảy ra.
+Không đúng là mỗi lần bạn làm điều đó thì đó là một vấn đề, nhưng hầu hết thời gian khi bạn làm điều đó, đó là một vấn đề. Hầu hết thời gian.
+Mối quan hệ thú vị cụ thể này gây ra điều đó xảy ra.
 
 #### Điều Gì Đã Sai?
 
 Vậy điều gì đã sai? Một hình vuông không phải là một hình chữ nhật sao? Một hình vuông là một hình chữ nhật, vì vậy đó nên là mối quan hệ đúng.
 
-Bây giờ, vì đó không phải là một hình vuông, đó là một đoạn code. Đó không phải là một hình chữ nhật. Nó là một đoạn code. Đúng là một hình vuông là một hình chữ nhật, nhưng lớp `Square` không phải là một hình vuông. Lớp `Rectangle` không phải là một hình chữ nhật.
+Bây giờ, vì đó không phải là một hình vuông, đó là một đoạn code. Đó không phải là một hình chữ nhật. Nó là một đoạn code.
+Đúng là một hình vuông là một hình chữ nhật, nhưng lớp `Square` không phải là một hình vuông. Lớp `Rectangle` không phải là một hình chữ nhật.
 
-Nếu lớp `Square` đại diện cho hình vuông, lớp `Rectangle` đại diện cho một hình chữ nhật. Nhưng **những người đại diện của các thứ không chia sẻ các mối quan hệ của các thứ mà họ đại diện**.
+Nếu lớp `Square` đại diện cho hình vuông, lớp `Rectangle` đại diện cho một hình chữ nhật.
+Nhưng **những người đại diện của các thứ không chia sẻ các mối quan hệ của các thứ mà họ đại diện**.
 
-Nếu ai đó ở đây đã li dị, bạn có thể đã có hai luật sư đại diện cho bạn và vợ/chồng của bạn. Hai luật sư đó có lẽ không tự họ đang ly dị. Những thứ đại diện không chia sẻ các mối quan hệ của những thứ mà họ đại diện.
+Nếu ai đó ở đây đã li dị, bạn có thể đã có hai luật sư đại diện cho bạn và vợ/chồng của bạn.
+Hai luật sư đó có lẽ không tự họ đang ly dị. Những thứ đại diện không chia sẻ các mối quan hệ của những thứ mà họ đại diện.
 
 Bạn không thể chỉ đơn giản nói, "Ồ, lớp đó có tên của một cái gì đó, và do đó tôi sẽ sử dụng một mối quan hệ kế thừa." Bạn phải hiểu những mối quan hệ này là gì.
 
-Chúng ta gọi mối quan hệ đó là "is-a" (là một). Đó là cái tên sai cho điều đó. Nó không phải là "is-a." Nó được thừa hưởng từ những người trí tuệ nhân tạo trong những năm 80. Họ đang làm các cấu trúc dữ liệu thú vị gọi là knowledge nets, và họ có các mối quan hệ thú vị: "has-a" (có một), "tastes-like" (nếm giống như), "smells-like" (ngửi giống như), "is-a" (là một). Tất cả họ đều bị sa thải vì nguồn tài trợ của họ cạn kiệt vì trí tuệ nhân tạo không thực sự làm bất cứ điều gì hữu ích. Vì vậy, sau đó tất cả họ trở thành các lập trình viên OO, và họ mang theo các từ viết tắt thú vị của họ. Đó là cách chúng ta có được các mối quan hệ "has-a" và "uses" và "is-a". Họ đặt tên các mối quan hệ này theo cách đó, nhưng chúng là lời nói dối. Chúng không chính xác.
+Chúng ta gọi mối quan hệ đó là "is-a" (là một). Đó là cái tên sai cho điều đó. Nó không phải là "is-a." Nó được thừa hưởng từ những người trí tuệ nhân tạo trong những năm 80.
+Họ đang làm các cấu trúc dữ liệu thú vị gọi là knowledge nets, và họ có các mối quan hệ thú vị: "has-a" (có một), "tastes-like" (nếm giống như), "smells-like" (ngửi giống như), "is-a" (là một).
+Tất cả họ đều bị sa thải vì nguồn tài trợ của họ cạn kiệt vì trí tuệ nhân tạo không thực sự làm bất cứ điều gì hữu ích.
+Vì vậy, sau đó tất cả họ trở thành các lập trình viên OO, và họ mang theo các từ viết tắt thú vị của họ.
+Đó là cách chúng ta có được các mối quan hệ "has-a" và "uses" và "is-a". Họ đặt tên các mối quan hệ này theo cách đó, nhưng chúng là lời nói dối. Chúng không chính xác.
 
 Mối quan hệ kế thừa không phải là mối quan hệ "is-a". Mối quan hệ kế thừa thực sự chỉ là việc khai báo lại các hàm và biến trong một phạm vi con.
 
 #### Cách Sửa Nó
 
-Làm thế nào chúng ta có thể sửa vấn đề này? Mối quan hệ giữa `Square` và `Rectangle` là gì? Họ có... nhưng vâng, bạn muốn như "hành xử như" (behaves like) một thứ. Tôi sẽ làm gì? Tôi sẽ có bất kỳ mối quan hệ nào giữa hai lớp này không? Cả hai có thể kế thừa từ một lớp cơ sở chung. Có lẽ lớp cơ sở là `Shape`. Nhưng hai lớp này thực sự không có gì chung cả. Chúng không có cùng số biến. Chúng không có cùng hành vi. Chúng không liên quan, ít nhất không phải như anh em, và chắc chắn `Rectangle` không phải là cha mẹ của `Square`.
+Làm thế nào chúng ta có thể sửa vấn đề này? Mối quan hệ giữa `Square` và `Rectangle` là gì? Họ có... nhưng vâng, bạn muốn như "hành xử như" (behaves like) một thứ.
+Tôi sẽ làm gì? Tôi sẽ có bất kỳ mối quan hệ nào giữa hai lớp này không? Cả hai có thể kế thừa từ một lớp cơ sở chung. Có lẽ lớp cơ sở là `Shape`.
+Nhưng hai lớp này thực sự không có gì chung cả. Chúng không có cùng số biến. Chúng không có cùng hành vi.
+Chúng không liên quan, ít nhất không phải như anh em, và chắc chắn `Rectangle` không phải là cha mẹ của `Square`.
 
-Đây là một vi phạm của Nguyên tắc Thay thế Liskov vì `Square` không thể thay thế cho `Rectangle`, mặc dù nó có vẻ phù hợp với định nghĩa của "is-a". Nó không phù hợp với quy tắc thay thế.
+Đây là một vi phạm của Nguyên tắc Thay thế Liskov vì `Square` không thể thay thế cho `Rectangle`, mặc dù nó có vẻ phù hợp với định nghĩa của "is-a".
+Nó không phù hợp với quy tắc thay thế.
 
 Bất cứ khi nào bạn vi phạm quy tắc thay thế, cuối cùng bạn sẽ thêm một câu lệnh `if` kiểm tra kiểu của đối tượng để ngăn bạn làm crash hệ thống của mình, điều này làm cho... đây là khoảng 8 giờ.
 
-Ồ, bạn muốn tiếp tục? Bạn muốn một phương thức `isRegular`? Bạn muốn cái đó ở trong `Rectangle`? Và những gì bạn đang nói là, "Đó có phải là một hình chữ nhật đều không?" Vì vậy, tôi thậm chí không muốn lớp `Square`. Tôi chỉ muốn một hình chữ nhật đều... Bây giờ điều gì sẽ xảy ra nếu sau đó tôi đặt height của một hình chữ nhật đều? Nó có đặt width không? Tôi có sửa đổi width không? Tôi có dám không? Hay tôi chỉ đặt cờ `isRegular` thành false?
+Ồ, bạn muốn tiếp tục? Bạn muốn một phương thức `isRegular`? Bạn muốn cái đó ở trong `Rectangle`?Và những gì bạn đang nói là, "Đó có phải là một hình chữ nhật đều không?"
+Vì vậy, tôi thậm chí không muốn lớp `Square`. Tôi chỉ muốn một hình chữ nhật đều... Bây giờ điều gì sẽ xảy ra nếu sau đó tôi đặt height của một hình chữ nhật đều?
+Nó có đặt width không? Tôi có sửa đổi width không? Tôi có dám không? Hay tôi chỉ đặt cờ `isRegular` thành false?
 
 Nếu chúng tình cờ giống nhau, tôi có tự động đặt cờ `isRegular` không? Tôi tính toán nó. Vì vậy `isRegular` sẽ trả về true nếu height và width giống nhau. Okay.
 
